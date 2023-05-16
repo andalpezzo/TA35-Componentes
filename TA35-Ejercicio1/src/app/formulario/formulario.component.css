@@ -1,0 +1,14 @@
+.form-label {
+  text-align: right;
+  width: 80px;
+}
+
+h1 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.btn-light {
+  margin-top: 20px;
+  border: 1px solid;
+}

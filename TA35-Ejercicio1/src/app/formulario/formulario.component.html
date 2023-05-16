@@ -1,0 +1,62 @@
+<div class="container mb-3">
+  <div class="col">
+    <h1>Alta Cliente</h1>
+  </div>
+  <form class="form-group col">
+    <div class="d-flex mb-3 align-items-left">
+      <label for="nombre" class="form-label pe-3">Nombre:</label>
+      <input type="text" name="nombre" id="nombre" class="form-control" [(ngModel)]="labelNombre"/>
+    </div>
+    <div class="d-flex mb-3 align-items-left">
+      <label for="cif" class="form-label pe-3 cif">CIF: </label>
+      <input type="text" name="cif" id="cif" class="form-control" [(ngModel)]="labelCif"/>
+    </div>
+    <div class="d-flex mb-3 align-items-left">
+      <label for="direccion" class="form-label pe-3">Dirección:</label>
+      <input type="text" name="direccion" id="direccion" class="form-control" [(ngModel)]="labelDireccion"/>
+    </div>
+    <div class="d-flex mb-3 align-items-left">
+      <label for="grupo" class="form-label pe-3">Grupo:</label>
+      <div class="col-sm-6">
+        <select class="form-select input-sm" name="grupo" id="grupo" [(ngModel)]="selectGrupo">
+          <option>Grupo 1</option>
+          <option>Grupo 2</option>
+          <option>Grupo 3</option>
+        </select>
+      </div>
+    </div>
+    <div class="col">
+      <button type="submit" class="btn btn-light" (click)="addCliente()">
+        Guardar
+      </button>
+    </div>
+  </form>
+</div>
+<div class="container mb-3">
+  <br /><br />
+  <div class="col">
+    <h1>Listado Clientes</h1>
+  </div>
+  <div class="row">
+    <div class="col">
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">CIF</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Grupo</th>
+          </tr>
+        </thead>
+        <thead>
+          <tr scope="row" *ngFor="let cliente of clientes">
+            <td>{{ cliente.nombre }}</td>
+            <td>{{ cliente.cif }}</td>
+            <td>{{ cliente.direccion }}</td>
+            <td>{{ cliente.grupo }}</td>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>
